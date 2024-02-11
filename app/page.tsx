@@ -10,7 +10,7 @@ export default async function Home() {
 	const categories = await getParentCategories();
 
 	return (
-		<main className="flex min-h-screen flex-col items-center gap-y-8 p-24">
+		<main className="flex min-h-screen flex-col items-center gap-y-8 p-2 sm:p-12">
 			<Nav />
 			
 			<Title>Shop</Title>

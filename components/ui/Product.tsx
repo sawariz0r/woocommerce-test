@@ -15,7 +15,7 @@ type ProductProps = {
 
 export const Product = ({product}: ProductProps) => {
 	return (
-		<div className="flex gap-x-24 py-8 items-center">
+		<div className="flex gap-x-24 py-8 items-center flex-col sm:flex-row">
 			<div className="md:w-1/2 flex justify-center">
 				<div className="h-[580px] aspect-square">
 					<EmblaCarousel images={product.images} />

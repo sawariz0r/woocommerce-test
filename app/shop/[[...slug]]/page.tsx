@@ -25,7 +25,7 @@ export default async function Category({params}: CategoryPageProps) {
 	if (parentCategory && !isProductOrSubCategory) {
 		const parentCategoryId = parentCategories.find(c => c.slug === parentCategory)?.id;
 		return (
-			<main className="flex min-h-screen flex-col p-12">
+			<main className="flex min-h-screen flex-col p-2 sm:p-12">
 				<Nav />
 
 				<Title>{parentCategory}</Title>
@@ -39,7 +39,7 @@ export default async function Category({params}: CategoryPageProps) {
 
 	if (subcategory) {
 		return (
-			<main className="flex min-h-screen flex-col p-12">
+			<main className="flex min-h-screen flex-col p-2 sm:p-12">
 				<Nav />
 
 				<Title>{subcategory.name}</Title>
@@ -53,7 +53,7 @@ export default async function Category({params}: CategoryPageProps) {
 
 	if (product) {
 		return (
-			<main className="flex min-h-screen flex-col p-12">
+			<main className="flex min-h-screen flex-col p-2 sm:p-12">
 				<Nav />
 
 				<Product product={product} />
@@ -63,7 +63,7 @@ export default async function Category({params}: CategoryPageProps) {
 
 	// /shop, default
 	return (
-		<main className="flex min-h-screen flex-col p-12">
+		<main className="flex min-h-screen flex-col p-2 sm:p-12">
 			<Nav />
 
 			<Title>Shop</Title>

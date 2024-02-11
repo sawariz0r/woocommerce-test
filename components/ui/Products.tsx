@@ -10,7 +10,7 @@ const parentSlugs = ["men", "accessories", "women"];
 
 export const Products = ({products}: ProductsProps) => {
 	return (
-		<div className="grid grid-cols-4 px-8 gap-x-5 gap-y-8 mt-8">
+		<div className="grid grid-cols-1 md:grid-cols-4 px-8 gap-x-5 gap-y-8 mt-8">
 			{products.map((product, index) => {
 				const mainCategorySlug = product.categories.find(c => parentSlugs.includes(c.slug))?.slug;
 				const subCategorySlug = product.categories.find(c => c.slug !== mainCategorySlug)?.slug;
