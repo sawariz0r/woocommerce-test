@@ -26,16 +26,16 @@ export default function Nav(props: {canGoBack?: boolean}) {
 	return (
 		<div className="relative flex h-24 justify-center w-full">
 			{backUrl && (
-				<Link href={backUrl} className="absolute left-0 top-0 py-4 hover:underline underline-offset-4">
-					&lt; Back
+				<Link href={backUrl} className="absolute left-0 top-0 py-4 hover:underline underline-offset-4 max-sm:text-3xl max-sm:px-2">
+					&lt; <span className="hidden sm:inline">Back</span>
 				</Link>
 			)}
 			{props.canGoBack && (
-				<button onClick={router.back} className="absolute left-0 top-0 py-4 hover:underline underline-offset-4">
-					&lt; Back
+				<button onClick={router.back} className="absolute left-0 top-0 py-4 hover:underline underline-offset-4 max-sm:text-3xl max-sm:px-2">
+					&lt; <span className="hidden sm:inline">Back</span>
 				</button>
 			)}
-			<p className="text-2xl bg-gradient-to-tr from-lime-400 to-lime-500 bg-clip-text text-transparent">
+			<p className="text-2xl max-sm:pt-4 bg-gradient-to-tr from-lime-400 to-lime-500 bg-clip-text text-transparent">
 				The Vale shop
 			</p>
 			{pathname !== "/cart" && (
