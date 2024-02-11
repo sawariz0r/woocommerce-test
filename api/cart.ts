@@ -1,6 +1,6 @@
 import {CartItem} from "@/types/next";
 
-export const url = "http://localhost:3000/api";
+export const url = `${process.env.NEXT_PUBLIC_URL}/api`
 
 export const getCart = async () => {
 	const response = await fetch(`${url}/cart`, {
