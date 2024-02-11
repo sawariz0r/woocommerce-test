@@ -1,15 +1,11 @@
-import {NextRequest} from "next/server";
+import {CartItem} from "@/types/next";
+import {NextRequest, NextResponse} from "next/server";
 
-type CartItem = {
-	id: number;
-	quantity: number;
-};
-
-// TODO: Replace with session or a cookie
 const cart: CartItem[] = [];
 
 export async function GET(request: NextRequest) {
-	return cart;
+	console.log("cart", cart);
+	return NextResponse.json(cart);
 }
 
 export async function POST(request: NextRequest) {
@@ -20,7 +16,7 @@ export async function POST(request: NextRequest) {
 	} else {
 		cart[index].quantity += quantity;
 	}
-	return cart;
+	return NextResponse.json(cart);
 }
 
 export async function DELETE(request: NextRequest) {
@@ -29,5 +25,5 @@ export async function DELETE(request: NextRequest) {
 	if (index !== -1) {
 		cart.splice(index, 1);
 	}
-	return cart;
+	return NextResponse.json(cart);
 }

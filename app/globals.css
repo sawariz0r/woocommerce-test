@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.embla__container {
+	display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%; /* Slide covers 80% of the viewport */
+}

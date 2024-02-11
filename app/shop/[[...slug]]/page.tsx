@@ -2,6 +2,7 @@ import {getCategoryBySlug, getParentCategories, getSubCategories} from "@/api/ca
 import {getProductBySlug, getProducts, getProductsByCategory} from "@/api/products";
 import {Categories} from "@/components/ui/Categories";
 import Nav from "@/components/ui/Nav";
+import { Product } from "@/components/ui/Product";
 import {Products} from "@/components/ui/Products";
 import {Title} from "@/components/ui/Title";
 import {CategoryPageProps} from "@/types/next";
@@ -24,7 +25,7 @@ export default async function Category({params}: CategoryPageProps) {
 	if (parentCategory && !isProductOrSubCategory) {
 		const parentCategoryId = parentCategories.find(c => c.slug === parentCategory)?.id;
 		return (
-			<main className="flex min-h-screen flex-col p-24">
+			<main className="flex min-h-screen flex-col p-12">
 				<Nav />
 
 				<Title>{parentCategory}</Title>
@@ -38,7 +39,7 @@ export default async function Category({params}: CategoryPageProps) {
 
 	if (subcategory) {
 		return (
-			<main className="flex min-h-screen flex-col p-24">
+			<main className="flex min-h-screen flex-col p-12">
 				<Nav />
 
 				<Title>{subcategory.name}</Title>
@@ -52,19 +53,17 @@ export default async function Category({params}: CategoryPageProps) {
 
 	if (product) {
 		return (
-			<main className="flex min-h-screen flex-col p-24">
+			<main className="flex min-h-screen flex-col p-12">
 				<Nav />
 
-				<Title>{product.name}</Title>
-
-				<Products products={[product]} />
+				<Product product={product} />
 			</main>
 		);
 	}
 
 	// /shop, default
 	return (
-		<main className="flex min-h-screen flex-col p-24">
+		<main className="flex min-h-screen flex-col p-12">
 			<Nav />
 
 			<Title>Shop</Title>
