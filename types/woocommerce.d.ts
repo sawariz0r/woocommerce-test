@@ -1,3 +1,17 @@
+/* Example image
+
+{"id":166,"date_created":"2022-03-24T19:22:28","date_created_gmt":"2022-03-24T17:22:28","date_modified":"2022-03-24T19:22:28","date_modified_gmt":"2022-03-24T17:22:28","src":"https://shop-interview.acrowd.se/wp-content/uploads/2022/03/Hoodie-Women-3.jpg","name":"Hoodie-Women-3.jpg","alt":""}*/
+
+export type Image = {
+	id: number;
+	date_created: string;
+	date_created_gmt: string;
+	date_modified: string;
+	date_modified_gmt: string;
+	src: string;
+	name: string;
+	alt: string;
+};
 
 export type Product = {
 	id: number;
@@ -64,7 +78,7 @@ export type Product = {
 		slug: string;
 	}[];
 	tags: any[];
-	images: any[];
+	images?: Image[];
 	attributes: any[];
 	default_attributes: any[];
 	variations: any[];
@@ -86,21 +100,21 @@ export type Product = {
 };
 
 export type Category = {
-    id: number;
-    name: string;
-    slug: string;
-    parent: number;
-    description: string;
-    display: string;
-    image: any;
-    menu_order: number;
-    count: number;
-    _links: {
-        self: {
-            href: string;
-        }[];
-        collection: {
-            href: string;
-        }[];
-    };
+	id: number;
+	name: string;
+	slug: string;
+	parent: number;
+	description: string;
+	display: string;
+	image: any;
+	menu_order: number;
+	count: number;
+	_links: {
+		self: {
+			href: string;
+		}[];
+		collection: {
+			href: string;
+		}[];
+	};
 };

@@ -1,26 +1,23 @@
 import {getParentCategories} from "@/api/categories";
 import {getProducts} from "@/api/products";
-import Image from "next/image";
+import {Categories} from "@/components/ui/Categories";
+import Nav from "@/components/ui/Nav";
+import {Products} from "@/components/ui/Products";
+import {Title} from "@/components/ui/Title";
 
 export default async function Home() {
 	const products = await getProducts();
 	const categories = await getParentCategories();
 
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<h1>Shop</h1>
+		<main className="flex min-h-screen flex-col items-center gap-y-8 p-24">
+			<Nav />
+			
+			<Title>Shop</Title>
 
-			{categories.map((category, index) => (
-				<a href={`/shop/${category.slug}`} key={index}>
-					{category.name}
-				</a>
-			))}
+			<Categories categories={categories} />
 
-			{products.map((product, index) => (
-				<a href={`/shop/${product.categories.map}`} key={index}>
-					*{product.name}
-				</a>
-			))}
+			<Products products={products} />
 		</main>
 	);
 }
